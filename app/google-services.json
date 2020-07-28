@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "182979276749",
+    "firebase_url": "https://annadatha-815be.firebaseio.com",
+    "project_id": "annadatha-815be",
+    "storage_bucket": "annadatha-815be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182979276749:android:9d0f2ae9b0983c6bb11e84",
+        "android_client_info": {
+          "package_name": "com.abhishek.annadatha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182979276749-6aafm7625ic3kusvev1th3ardcj5fllm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abhishek.annadatha",
+            "certificate_hash": "6788d5cf11ab93c475d12169f2a211bf270e2b75"
+          }
+        },
+        {
+          "client_id": "182979276749-656rai0v284kn3b4b85lfqbe6e8184er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqiqq6G7gg3eB1ft6Rim0T7NSbPWFiYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182979276749-656rai0v284kn3b4b85lfqbe6e8184er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

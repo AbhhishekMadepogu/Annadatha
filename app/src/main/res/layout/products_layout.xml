@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:elevation="15dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            style="bold"
+            android:id="@+id/tvproduct_name"
+            ></TextView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/ivProduct"
+            android:layout_below="@id/tvproduct_name"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="2dp"
+            ></ImageView>
+        <TextView
+            android:layout_below="@id/ivProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Descrption"
+
+            android:textSize="16sp"
+            style="bold"
+            android:id="@+id/tvproduct_description"
+            ></TextView>
+        <TextView
+            android:layout_below="@id/tvproduct_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product Price"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            style="bold"
+            android:id="@+id/tvproduct_price"
+            ></TextView>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@drawable/buttons"
+            android:layout_below="@id/tvproduct_price"
+            android:text="Add to cart"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            ></Button>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

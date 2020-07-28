@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/backgrounds1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtPasswordr"
+        android:layout_above="@id/btnRegister"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter your password"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="15dp"
+        android:textColorHint="@android:color/black"
+        android:layout_marginRight="15dp"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtPhoner"
+        android:inputType="number"
+        android:layout_above="@id/txtPasswordr"
+        android:layout_marginBottom="15dp"
+        android:hint="Enter your phone number"
+        android:textColorHint="@android:color/black"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtNamer"
+        android:layout_above="@id/txtPhoner"
+        android:layout_marginBottom="20dp"
+        android:hint="Enter your Name"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="15dp"
+        android:textColorHint="@android:color/black"
+        android:layout_marginRight="15dp"></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegister"
+        android:background="@drawable/buttons"
+        android:text="Register"
+        android:textColor="#fff"
+        android:layout_above="@id/btnLoginR"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+    </Button>
+    <Button
+        android:id="@+id/btnLoginR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/buttons"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#fff"
+        android:text="Already a memeber? Login"></Button>
+</RelativeLayout>

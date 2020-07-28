@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrounds2"
+    tools:context=".loginActivity">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtPasswordl"
+        android:layout_above="@id/btnLoginl"
+        android:layout_marginBottom="60dp"
+        android:hint="Enter your password"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="15dp"
+        android:textColorHint="@android:color/black"
+        android:layout_marginRight="15dp"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtPhonel"
+        android:layout_above="@id/txtPasswordl"
+        android:layout_marginBottom="15dp"
+        android:hint="Enter your phone number"
+        android:textColorHint="@android:color/black"
+        android:background="@drawable/input_design"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"></EditText>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_above="@id/btnLoginl"
+        >
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_design"
+        android:id="@+id/chbrm"></CheckBox>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Remember Me"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorPrimary"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text=" Not an Admin"
+
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="60dp"
+            android:visibility="invisible"
+            android:id="@+id/tvnotAdmin">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Admin?"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/tvAdmin">
+        </TextView>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLoginl"
+        android:background="@drawable/buttons"
+        android:text="Login"
+        android:textColor="#fff"
+        android:layout_above="@id/join_nowbtnl"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+    </Button>
+    <Button
+        android:id="@+id/join_nowbtnl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/buttons"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#fff"
+        android:text="Not a member? Register"></Button>
+
+
+</RelativeLayout>

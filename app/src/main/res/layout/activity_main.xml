@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo"
+        android:id="@+id/logo"
+        ></ImageView>
+<TextView
+    android:layout_width="220dp"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:layout_below="@+id/logo"
+    android:textAlignment="center"
+
+    android:text="A Government Initiative to help Farmers"
+    android:textColor="@color/colorPrimary"
+    android:textSize="20sp"
+    android:textStyle="bold|italic"
+    ></TextView>
+<Button
+    android:id="@+id/join_nowbtn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/buttons"
+    android:layout_marginBottom="30dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:textColor="#fff"
+    android:text="Already a memeber? Login"></Button>
+
+    <Button
+        android:id="@+id/join_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      android:layout_marginBottom="30dp"
+        android:background="@drawable/input_design"
+        android:layout_above="@+id/join_nowbtn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#fff"
+        android:text="Register now"></Button>
+
+</RelativeLayout>
