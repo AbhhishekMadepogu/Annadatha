@@ -1,12 +1,21 @@
 package com.abhishek.annadatha.Model;
 
 public class User {
-    private String name,password,phone;
+    private String name,password,phone,address;
 
-    public User(String name, String password, String phone) {
+    public User(String name, String password, String phone, String address) {
         this.name = name;
         this.password = password;
         this.phone = phone;
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public User() {

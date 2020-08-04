@@ -150,6 +150,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             finish();
         }
         else if(id==R.id.nav_settings){
+            Intent i=new Intent(HomeActivity.this,SettingsActivity.class);
+            startActivity(i);
 
         }
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
