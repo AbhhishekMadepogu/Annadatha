@@ -158,10 +158,10 @@ public class SettingsActivity extends AppCompatActivity {
                          usermap.put("name",txtname.getText().toString());
                          usermap.put("address",txtaddress.getText().toString());
                          usermap.put("phoneOrder",txtphonenumber.getText().toString());
-                         usermap.put("image ",url);
+                         usermap.put("image",url);
                          dbfref.child(Prevalent.CurrentonlineUser.getPhone()).updateChildren(usermap);
                          progressDialog.dismiss();
-                         startActivity(new Intent(SettingsActivity.this,MainActivity.class));
+                         startActivity(new Intent(SettingsActivity.this,HomeActivity.class));
                          Toast.makeText(SettingsActivity.this, "User Info Updated", Toast.LENGTH_SHORT).show();
                          finish();
                      }
