@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SellerLoginActivity">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:src="@drawable/indianfarmersush"
+    android:id="@+id/iv"
+    android:layout_margin="20dp"
+    ></ImageView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Enter Your Phone Number"
+        android:background="@drawable/input_design"
+        android:id="@+id/etSellerloginPhone"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/iv"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/input_design"
+        android:hint="Enter Your Password"
+        android:id="@+id/etSellerloginPassword"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/etSellerloginPhone"></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Login"
+        android:id="@+id/btnsellerLoginLogin"
+        android:layout_below="@+id/etSellerloginPassword"
+        android:background="@drawable/buttons"
+        android:layout_margin="15dp"
+        ></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Not A member Register?"
+        android:id="@+id/btnsellerLoginRegister"
+        android:layout_below="@+id/btnsellerLoginLogin"
+        android:background="@drawable/input_design"
+        android:layout_margin="15dp"
+        ></Button>
+</RelativeLayout>

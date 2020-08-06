@@ -17,6 +17,14 @@
         android:layout_height="30dp"
         android:layout_below="@+id/imgSeller"
         android:layout_margin="15dp"
+        android:hint="Enter Your Phone Number"
+        android:background="@drawable/input_design"
+        android:id="@+id/etsellerregPhone"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/etsellerregPhone"
+        android:layout_margin="15dp"
         android:hint="Enter Your Full Name"
         android:background="@drawable/input_design"
         android:id="@+id/etsellerregName"></EditText>
@@ -52,7 +60,8 @@
         android:layout_margin="15dp"
         android:text="Already member? LOgin"
         android:background="@drawable/input_design"
-        android:textColor="@android:color/black"></Button>
+        android:textColor="@android:color/black"
+        android:id="@+id/btnSellerreglogin"></Button>
 
 
 </RelativeLayout>
