@@ -32,7 +32,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     Button btnAddcart;
     ElegantNumberButton btnQuantity;
     String pid="",saveCurrentDate,saveCurrentTime,randomKey;
-    String ProductName;
+    //String ProductName;
+    String phone=Prevalent.CurrentonlineUser.getPhone();
 
 
     @Override
@@ -65,6 +66,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         saveCurrentTime=currentTime.format(calendar.getTime());
         randomKey=saveCurrentDate+saveCurrentTime;
         final DatabaseReference cartref=FirebaseDatabase.getInstance().getReference().child("Cart");
+        DatabaseReference dref=FirebaseDatabase.getInstance().getReference().child("CARTW");
         final HashMap<String,Object> cartmap=new HashMap<>();
         cartmap.put("pid",pid);
         cartmap.put("pname",tvProductName.getText().toString());
@@ -73,6 +75,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartmap.put("date",saveCurrentDate);
         cartmap.put("time",saveCurrentTime);
         cartmap.put("discount","");
+        dref.child(Prevalent.CurrentonlineUser.getPhone()).child(pid).updateChildren(cartmap);
         cartref.child("User View").child(Prevalent.CurrentonlineUser.getPhone()).child("Products").child(pid).updateChildren(cartmap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

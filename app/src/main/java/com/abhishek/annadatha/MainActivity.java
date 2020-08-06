@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     User userdata=dataSnapshot.child("Users").child(phone1).getValue(User.class);
                     if(userdata.getPhone().equals(phone1)){
                         if(userdata.getPassword().equals(password1)){
-                            Toast.makeText(MainActivity.this, "Login Successful...", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "Login Successful...", Toast.LENGTH_SHORT).show();
                             loadingbar.dismiss();
                             Intent i = new Intent(MainActivity.this,HomeActivity.class);
                             Prevalent.CurrentonlineUser=userdata;

@@ -64,8 +64,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                navtoCart();
+
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -75,7 +75,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView txtUserName=header.findViewById(R.id.tvUsername);
         ImageView ivUser=header.findViewById(R.id.ivprofile_image);
         String l=Paper.book().read(Prevalent.userName);
-        txtUserName.setText(l);
+        txtUserName.setText(Prevalent.CurrentonlineUser.getName());
         //Toast.makeText(this, Prevalent.CurrentonlineUser.getName(), Toast.LENGTH_SHORT).show();
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -128,6 +128,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.products_layout,parent,false);
                ProductViewHolder holder=new ProductViewHolder(view);
+                Toast.makeText(HomeActivity.this, "Hello", Toast.LENGTH_SHORT).show();
                return holder;
             }
         };
@@ -139,6 +140,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id=menuItem.getItemId();
         if(id==R.id.nav_cart){
+            navtoCart();
 
         }
         else if(id==R.id.nav_categories){
@@ -165,5 +167,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void navtoCart() {
+        Intent i=new Intent(HomeActivity.this,CartActivity.class);
+        startActivity(i);
     }
 }
