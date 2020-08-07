@@ -21,7 +21,7 @@
     android:layout_marginTop="20dp"
     android:layout_below="@+id/logo"
     android:textAlignment="center"
-
+android:id="@+id/tvgovt"
     android:text="A Government Initiative to help Farmers"
     android:textColor="@color/colorPrimary"
     android:textSize="20sp"
@@ -35,7 +35,8 @@
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="520dp"
+        android:layout_marginTop="59dp"
+ android:layout_below="@+id/tvgovt"
         android:layout_marginRight="40dp"
         ></TextView>
 <Button
