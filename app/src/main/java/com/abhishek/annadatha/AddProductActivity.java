@@ -20,8 +20,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -41,8 +45,9 @@ public class AddProductActivity extends AppCompatActivity {
     final static int gallerypick=1;
     private Uri imageUri;
     private StorageReference productimageReference;
-    private DatabaseReference productsref;
+    private DatabaseReference productsref,sellerref;
     ProgressDialog loadingbar;
+    private String sid,sname,saddress,semail,sphone;
 
 
 
@@ -61,6 +66,27 @@ public class AddProductActivity extends AppCompatActivity {
         Toast.makeText(this, category, Toast.LENGTH_SHORT).show();
         productimageReference= FirebaseStorage.getInstance().getReference().child("product images");
         productsref= FirebaseDatabase.getInstance().getReference().child("Products");
+        sellerref=FirebaseDatabase.getInstance().getReference().child("Sellers");
+
+
+        sellerref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    sname=dataSnapshot.child("name").getValue().toString();
+                    saddress=dataSnapshot.child("address").getValue().toString();
+                    sphone=dataSnapshot.child("phone").getValue().toString();
+                    semail=dataSnapshot.child("email").getValue().toString();
+                    sid=dataSnapshot.child("sid").getValue().toString();
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         ivProduct.setOnClickListener(new View.OnClickListener() {
@@ -157,6 +183,8 @@ public class AddProductActivity extends AppCompatActivity {
     private void saveProductInfotoDB() {
         HashMap<String,Object> productmap=new HashMap<>();
         productmap.put("pid",randomKey);
+        productmap.put("pname",productName);
+
         productmap.put("date",saveCurrentDate);
         productmap.put("time",saveCurrentTime);
         productmap.put("description",description);
@@ -164,7 +192,12 @@ public class AddProductActivity extends AppCompatActivity {
         productmap.put("quantity",quantity);
         productmap.put("image",downloadImageUrl);
         productmap.put("category",category);
-        productmap.put("pname",productName);
+        productmap.put("sellerName",sname);
+        productmap.put("sid",sid);
+        productmap.put("sellerAddress",saddress);
+        productmap.put("sellerEmail",semail);
+        productmap.put("sellerPhone",sphone);
+        productmap.put("productSatate","Not Approved");
         productsref.child(randomKey).updateChildren(productmap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -173,7 +206,7 @@ public class AddProductActivity extends AppCompatActivity {
                     Toast.makeText(AddProductActivity.this, "Product Added Successfully...", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Intent i=new Intent(AddProductActivity.this,AdminActivity.class);
+                    Intent i=new Intent(AddProductActivity.this,SellerHomeActivity.class);
                     //startActivity(i);
                     loadingbar.dismiss();
                     String m=task.getException().toString();
@@ -203,5 +236,8 @@ public class AddProductActivity extends AppCompatActivity {
 
 
         }
+    }
+    private void sellerInfo(){
+
     }
 }
