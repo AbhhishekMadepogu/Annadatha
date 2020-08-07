@@ -1,12 +1,18 @@
 package com.abhishek.annadatha.Model;
 
 public class Products {
-    String pname,description,price,image,category,pid,date,time,quantity;
+    String pname;
+    String description;
+    String price;
+    String image;
+    String category;
+    String pid;
+    String date;
+    String time;
+    String quantity;
+    String productSatate;
 
-    public Products() {
-    }
-
-    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time, String quantity) {
+    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time, String quantity, String productSatate) {
         this.pname = pname;
         this.description = description;
         this.price = price;
@@ -16,6 +22,10 @@ public class Products {
         this.date = date;
         this.time = time;
         this.quantity = quantity;
+        this.productSatate = productSatate;
+    }
+
+    public Products() {
     }
 
     public String getPname() {
@@ -88,5 +98,13 @@ public class Products {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public String getProductSatate() {
+        return productSatate;
+    }
+
+    public void setProductSatate(String productSatate) {
+        this.productSatate = productSatate;
     }
 }

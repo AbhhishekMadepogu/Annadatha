@@ -31,7 +31,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Login"
+        android:text="Login as seller"
         android:id="@+id/btnsellerLoginLogin"
         android:layout_below="@+id/etSellerloginPassword"
         android:background="@drawable/buttons"
@@ -40,7 +40,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Not A member Register?"
+        android:text="Not A member Register as Seller?"
         android:id="@+id/btnsellerLoginRegister"
         android:layout_below="@+id/btnsellerLoginLogin"
         android:background="@drawable/input_design"

@@ -57,7 +57,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/etsellerEmail"
         android:layout_margin="15dp"
-        android:text="Register"
+        android:text="Register as Seller"
         android:background="@drawable/buttons"
         android:id="@+id/btnSellerregregister"
         android:textColor="@android:color/white"></Button>
@@ -66,7 +66,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/btnSellerregregister"
         android:layout_margin="15dp"
-        android:text="Already member? LOgin"
+        android:text="Already member? Login as Seller"
         android:background="@drawable/input_design"
         android:textColor="@android:color/black"
         android:id="@+id/btnSellerreglogin"></Button>

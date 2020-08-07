@@ -18,37 +18,43 @@
             android:textAlignment="center"
             android:textSize="20sp"
             style="bold"
-            android:id="@+id/tvproduct_name"
+            android:id="@+id/tvproduct_name1"
             ></TextView>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/ivProduct"
-            android:layout_below="@id/tvproduct_name"
+            android:id="@+id/ivProduct1"
+            android:layout_below="@id/tvproduct_name1"
             android:scaleType="centerCrop"
             android:layout_marginTop="2dp"
             ></ImageView>
         <TextView
-            android:layout_below="@id/ivProduct"
+            android:layout_below="@id/ivProduct1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Product Descrption"
 
             android:textSize="16sp"
             style="bold"
-            android:id="@+id/tvproduct_description"
+            android:id="@+id/tvproduct_description1"
             ></TextView>
         <TextView
-            android:layout_below="@id/tvproduct_description"
+            android:layout_below="@id/tvproduct_description1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Product Price"
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             style="bold"
-            android:id="@+id/tvproduct_price"
+            android:id="@+id/tvproduct_price1"
             ></TextView>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@id/tvproduct_price1"
+            android:text="Status"
+            android:id="@+id/stats"
+            ></TextView>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
