@@ -2,6 +2,7 @@ package com.abhishek.annadatha;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -32,12 +33,12 @@ public class CustomerCategoryProductsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_category_products);
         rvProducts=findViewById(R.id.rvCategoryCustomer);
+        rvProducts.setLayoutManager(new LinearLayoutManager(this));
         txtCategoryName=findViewById(R.id.tvcustomerCAtegory);
-
         category=getIntent().getExtras().get("category").toString();
         txtCategoryName.setText(category);
-        Toast.makeText(this, ""+category, Toast.LENGTH_SHORT).show();
-        onStart();
+        //Toast.makeText(this, ""+category, Toast.LENGTH_SHORT).show();
+
 
 
     }
@@ -47,8 +48,9 @@ public class CustomerCategoryProductsActivity extends AppCompatActivity {
         super.onStart();
         category=getIntent().getExtras().get("category").toString();
         DatabaseReference drefs= FirebaseDatabase.getInstance().getReference().child("Products");
+       Toast.makeText(this, ""+category, Toast.LENGTH_SHORT).show();
         FirebaseRecyclerOptions<Products> options=new FirebaseRecyclerOptions.Builder<Products>().
-                setQuery(drefs.orderByChild("category").equalTo("fruits"),Products.class).build();
+                setQuery(drefs.orderByChild("category").equalTo(category),Products.class).build();
         FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter=new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ProductViewHolder holder, int i, @NonNull final Products products) {

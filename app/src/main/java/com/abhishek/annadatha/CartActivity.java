@@ -2,6 +2,7 @@ package com.abhishek.annadatha;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -39,8 +40,9 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         recyclerView=findViewById(R.id.rltcart);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         txtTotal=findViewById(R.id.txtTotal);
-        FirebaseRecyclerOptions<Cart> options= new FirebaseRecyclerOptions.Builder<Cart>().setQuery(databaseReference.child(Prevalent.CurrentonlineUser.getPhone()),Cart.class).build();
+        //FirebaseRecyclerOptions<Cart> options= new FirebaseRecyclerOptions.Builder<Cart>().setQuery(databaseReference.child(Prevalent.CurrentonlineUser.getPhone()),Cart.class).build();
         btnCheckout=findViewById(R.id.btnCheckout);
         onStart();
        // Toast.makeText(this, ""+databaseReference.child(Prevalent.CurrentonlineUser.getPhone()).getDatabase(), Toast.LENGTH_SHORT).show();
