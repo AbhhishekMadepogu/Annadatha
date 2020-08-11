@@ -7,16 +7,21 @@
     tools:context=".SellerRegistrationActivity">
     <ImageView
         android:layout_width="match_parent"
-
         android:layout_height="250dp"
         android:id="@+id/imgSeller"
-        android:layout_margin="15dp"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+
         android:src="@drawable/farmerindia"></ImageView>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_below="@+id/imgSeller"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Enter Your Phone Number"
         android:background="@drawable/input_design"
         android:id="@+id/etsellerregPhone"></EditText>
@@ -56,7 +61,9 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/etsellerEmail"
-        android:layout_margin="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
         android:text="Register as Seller"
         android:background="@drawable/buttons"
         android:id="@+id/btnSellerregregister"
@@ -65,7 +72,9 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@+id/btnSellerregregister"
-        android:layout_margin="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
         android:text="Already member? Login as Seller"
         android:background="@drawable/input_design"
         android:textColor="@android:color/black"
