@@ -26,6 +26,8 @@ public class SellerRegistrationActivity extends AppCompatActivity {
     Button btnLogin,btnRegister;
     private FirebaseAuth mauth;
     ProgressDialog loadingbar;
+     String name= "",password="",Address="",phone="",email="";
+
 
 
     @Override
@@ -60,12 +62,29 @@ public class SellerRegistrationActivity extends AppCompatActivity {
     }
 
     private void sellerRegister() {
-        final String name= txtName.getText().toString();
-        final String password=txtPassword.getText().toString();
-        final String Address=txtAddress.getText().toString();
-        final String phone=txtPhoneNumber.getText().toString();
-        final String email=txtEmail.getText().toString();
-        if((name!="")&&(password!="")&&(Address!="")&&(phone!="")&&(email!="")){
+         name= txtName.getText().toString();
+      password=txtPassword.getText().toString();
+        Address=txtAddress.getText().toString();
+      phone=txtPhoneNumber.getText().toString();
+       email=txtEmail.getText().toString();
+        if(TextUtils.isEmpty(name)){
+            Toast.makeText(this, "name should not be empty", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(password)){
+            Toast.makeText(this, "password should not be empty", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(Address)){
+            Toast.makeText(this, "Address should not be empty", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(phone)){
+            Toast.makeText(this, "Phone  should not be empty", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(email))
+        {
+            Toast.makeText(this, "Email should not be empty", Toast.LENGTH_SHORT).show();
+        }
+
+       else {
             loadingbar.setTitle("Creating Seller Account");
             loadingbar.setMessage("Please Wait while we are checking your credentials...");
             loadingbar.setCanceledOnTouchOutside(false);
@@ -106,8 +125,6 @@ public class SellerRegistrationActivity extends AppCompatActivity {
 
 
         }
-        else{
-            Toast.makeText(this, "Please fill all the Details to continue", Toast.LENGTH_SHORT).show();
-        }
+
     }
 }
