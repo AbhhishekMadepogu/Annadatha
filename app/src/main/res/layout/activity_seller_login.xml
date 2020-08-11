@@ -19,13 +19,15 @@
         android:background="@drawable/input_design"
         android:id="@+id/etSellerloginPhone"
         android:layout_margin="15dp"
-        android:layout_below="@+id/iv"></EditText>
+        android:layout_below="@+id/iv"
+        android:inputType="number"></EditText>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/input_design"
         android:hint="Enter Your Password"
         android:id="@+id/etSellerloginPassword"
+        android:inputType="textPassword"
         android:layout_margin="15dp"
         android:layout_below="@+id/etSellerloginPhone"></EditText>
     <Button

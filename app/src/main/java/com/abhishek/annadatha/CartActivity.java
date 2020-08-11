@@ -37,6 +37,8 @@ public class CartActivity extends AppCompatActivity {
     TextView txtTotal;
     String phone=Prevalent.CurrentonlineUser.getPhone();
     DatabaseReference databaseReference;
+    String totalAmt;
+    int onetypePrice=0;
 
 
     @Override
@@ -67,6 +69,8 @@ public class CartActivity extends AppCompatActivity {
                holder.txtQuanity.setText(cart.getQuantity());
               // holder.txtPrice.setText(cart.getPrice());
                holder.txtname.setText(cart.getPname());
+               //onetypePrice=cart.getPrice()* (cart.getQuantity());
+               totalAmt=totalAmt+onetypePrice;
                holder.itemView.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View v) {
@@ -120,6 +124,7 @@ public class CartActivity extends AppCompatActivity {
        };
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+        txtTotal.setText(totalAmt);
     }
 
 }

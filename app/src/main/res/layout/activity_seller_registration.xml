@@ -24,7 +24,8 @@
         android:layout_marginBottom="10dp"
         android:hint="Enter Your Phone Number"
         android:background="@drawable/input_design"
-        android:id="@+id/etsellerregPhone"></EditText>
+        android:id="@+id/etsellerregPhone"
+        android:inputType="number"></EditText>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -40,7 +41,8 @@
         android:background="@drawable/input_design"
         android:layout_margin="10dp"
         android:hint="Enter Your Password"
-        android:id="@+id/etsellerregPassword"></EditText>
+        android:id="@+id/etsellerregPassword"
+        android:inputType="textPassword"></EditText>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="30dp"
