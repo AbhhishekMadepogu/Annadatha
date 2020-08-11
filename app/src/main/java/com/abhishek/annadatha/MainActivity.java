@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Paper.init(this);
         //Paper.book().write(Prevalent.phone,"");
-        Paper.book().write(Prevalent.password,"");
+        //Paper.book().write(Prevalent.password,"");
         //Paper.book().write(Prevalent.userName,"");
         loadingbar=new ProgressDialog(this);
         btnjoin.setOnClickListener(new View.OnClickListener() {

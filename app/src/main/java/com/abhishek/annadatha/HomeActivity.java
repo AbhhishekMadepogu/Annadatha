@@ -159,6 +159,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
             finish();
         }
+        else if(id==R.id.nav_Rateus){
+            Intent i=new Intent(HomeActivity.this,SearchProductsActivity.class);
+            startActivity(i);
+
+        }
         else if(id==R.id.nav_settings){
             Intent i=new Intent(HomeActivity.this,SettingsActivity.class);
             startActivity(i);

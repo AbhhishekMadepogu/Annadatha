@@ -42,6 +42,7 @@ public class CartActivity extends AppCompatActivity {
         txtTotal=findViewById(R.id.txtTotal);
         FirebaseRecyclerOptions<Cart> options= new FirebaseRecyclerOptions.Builder<Cart>().setQuery(databaseReference.child(Prevalent.CurrentonlineUser.getPhone()),Cart.class).build();
         btnCheckout=findViewById(R.id.btnCheckout);
+        onStart();
        // Toast.makeText(this, ""+databaseReference.child(Prevalent.CurrentonlineUser.getPhone()).getDatabase(), Toast.LENGTH_SHORT).show();
 
     }
