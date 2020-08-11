@@ -1,25 +1,17 @@
 package com.abhishek.annadatha.Model;
 
 public class User {
-    private String name,password,phone,address;
+    private String name,password,phone,address,image;
 
-    public User(String name, String password, String phone, String address) {
+    public User() {
+    }
+
+    public User(String name, String password, String phone, String address, String image) {
         this.name = name;
         this.password = password;
         this.phone = phone;
         this.address = address;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public User() {
-
+        this.image = image;
     }
 
     public String getName() {
@@ -44,5 +36,21 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

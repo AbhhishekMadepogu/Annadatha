@@ -14,5 +14,14 @@
         android:background="@drawable/buttons"
         android:textColor="@android:color/white"
         android:id="@+id/btnApproove"></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+       android:layout_above="@+id/btnApproove"
+        android:layout_margin="15dp"
+        android:text="Change The Existing product Price"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"
+        android:id="@+id/btnMaintain"></Button>
 
 </RelativeLayout>

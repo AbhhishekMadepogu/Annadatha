@@ -50,24 +50,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private DatabaseReference productsRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    private String type="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         productsRef= FirebaseDatabase.getInstance().getReference().child("Products");
+        //type=getIntent().getExtras().get("Admin").toString();
+        Intent i=getIntent();
+        Bundle bundle=i.getExtras();
+
         setContentView(R.layout.activity_home);
         Paper.init(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navtoCart();
 
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -75,7 +75,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView txtUserName=header.findViewById(R.id.tvUsername);
         ImageView ivUser=header.findViewById(R.id.ivprofile_image);
         String l=Paper.book().read(Prevalent.userName);
-        txtUserName.setText(Prevalent.CurrentonlineUser.getName());
+
         //Toast.makeText(this, Prevalent.CurrentonlineUser.getName(), Toast.LENGTH_SHORT).show();
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -90,7 +90,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
          recyclerView.setLayoutManager(layoutManager);
+        if(bundle!=null){
+            type=getIntent().getExtras().get("Admin").toString();
+            txtUserName.setText("Admin");
 
+        }
+        else {
+            txtUserName.setText(Prevalent.CurrentonlineUser.getName());
+            Picasso.get().load(Prevalent.CurrentonlineUser.getImage()).into(ivUser);
+        }
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(type==""){
+                    navtoCart();
+                }
+                else{
+                    AdminToast();
+                }
+
+
+
+            }
+        });
     }
 
     @Override
@@ -114,9 +136,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i=new Intent(HomeActivity.this,ProductDetailsActivity.class);
-                        i.putExtra("pid",model.getPid());
-                        startActivity(i);
+                        if(type.equals("Admin")){
+                            Intent i=new Intent(HomeActivity.this,AdminChangePriceActivity.class);
+                            i.putExtra("pid",model.getPid());
+                            startActivity(i);
+
+                        }
+                        else{
+                            Intent i=new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                            i.putExtra("pid",model.getPid());
+                            startActivity(i);
+
+                        }
+
                     }
                 });
 
@@ -140,40 +172,72 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id=menuItem.getItemId();
         if(id==R.id.nav_cart){
-            navtoCart();
+            if(type==""){
+                navtoCart();
+            }
+            else{
+                AdminToast();
+            }
+
 
         }
         else if(id==R.id.nav_categories){
-            Intent i=new Intent(HomeActivity.this,CustomerCategoryActivity.class);
-            startActivity(i);
+            if(type==""){
+                Intent i=new Intent(HomeActivity.this,CustomerCategoryActivity.class);
+                startActivity(i);
+            }
+            else{
+                AdminToast();
+            }
+
 
         }
         else if(id==R.id.nav_orders){
 
         }
         else if(id==R.id.nav_logout){
-            Paper.book().write(Prevalent.password,"");
-            Paper.book().write(Prevalent.phone,"");
-            Paper.book().write(Prevalent.userName,"");
-            Intent i=new Intent(HomeActivity.this,MainActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            if (type == "") {
+                Paper.book().write(Prevalent.password,"");
+                Paper.book().write(Prevalent.phone,"");
+                Paper.book().write(Prevalent.userName,"");
+                Intent i=new Intent(HomeActivity.this,MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-            startActivity(i);
-            finish();
+                startActivity(i);
+                finish();
+
+            }
+          else{
+                AdminToast();
+            }
         }
         else if(id==R.id.nav_Rateus){
-            Intent i=new Intent(HomeActivity.this,SearchProductsActivity.class);
-            startActivity(i);
+          if(type==""){
+              Intent i=new Intent(HomeActivity.this,SearchProductsActivity.class);
+              startActivity(i);
+          }
+          else{
+              AdminToast();
+          }
 
         }
         else if(id==R.id.nav_settings){
-            Intent i=new Intent(HomeActivity.this,SettingsActivity.class);
-            startActivity(i);
+           if(type==""){
+               Intent i=new Intent(HomeActivity.this,SettingsActivity.class);
+               startActivity(i);
+           }
+           else{
+               AdminToast();
+           }
 
         }
         DrawerLayout drawerLayout=findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void AdminToast() {
+        Toast.makeText(this, "This Feature is Not Available for Admin", Toast.LENGTH_SHORT).show();
     }
 
     private void navtoCart() {

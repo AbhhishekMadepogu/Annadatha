@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class ApprooveProductsActivity extends AppCompatActivity {
-    Button btnApproove;
+    Button btnApproove,btnchPr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,15 @@ public class ApprooveProductsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(ApprooveProductsActivity.this,CheckProductActivity.class);
+                startActivity(i);
+            }
+        });
+        btnchPr=findViewById(R.id.btnMaintain);
+        btnchPr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(ApprooveProductsActivity.this,HomeActivity.class);
+                i.putExtra("Admin","Admin");
                 startActivity(i);
             }
         });

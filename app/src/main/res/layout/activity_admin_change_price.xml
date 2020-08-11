@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminChangePriceActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        android:layout_margin="15dp"
+        android:id="@+id/ivchangeprice"></ImageView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/input_design"
+        android:layout_below="@+id/ivchangeprice"
+        android:hint=" Product Name"
+        android:layout_margin="10dp"
+        android:id="@+id/txtNameChangePrice"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/txtNameChangePrice"
+        android:hint="Price"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_design"
+        android:id="@+id/txtPriceChangePrice"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtPriceChangePrice"
+        android:hint="Description"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_design"
+        android:id="@+id/txtPriceChangeDescription"></EditText>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:id="@+id/btnAPllychanges"
+        android:layout_below="@id/txtPriceChangeDescription"
+        android:background="@drawable/buttons"
+        android:text="Apply Changes"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="20dp"></Button>
+
+</RelativeLayout>
